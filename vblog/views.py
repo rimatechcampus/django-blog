@@ -28,3 +28,12 @@ def home(request):
         'posts' : posts
     }
     return render(request , 'home.html', context)
+
+
+
+
+def about(request):
+    context = {
+        'title': 'about'
+    }
+    return render(request , 'about.html', context)
