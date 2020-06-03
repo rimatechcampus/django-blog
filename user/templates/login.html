@@ -7,17 +7,17 @@
 {% load crispy_forms_tags %}
 
 
-<small class="border-bottom mt-2 font-weight-bold " style="color: #e91e63;">Register</small>
+<small class="border-bottom mt-2 font-weight-bold " style="color: #e91e63;">Login</small>
 <div class="border p-4 mt-5 mt-3">
     <form method="POST" class="mt-3">
         {% csrf_token %}
 
         {{form|crispy}}
 
-        <button class="btn btn-secondary">register</button>
+        <button class="btn btn-secondary">Login</button>
 
     </form>
-    <small class="font-weight-bold">Already have account <a href="{% url 'login' %}">login</a></small>
+    <small class="font-weight-bold">Don't have account <a href="{% url 'register' %}">Register</a></small>
 </div>
 
 

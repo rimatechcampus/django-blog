@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content  %}
+
+{% load crispy_forms_tags %}
+
+
+<small class="border-bottom mt-2 font-weight-bold " style="color: #e91e63;">Logout</small>
+<div class="border p-4 mt-5 mt-3">
+    <a href="{% url 'login' %}">Login again</a>
+</div>
+
+
+
+
+{% endblock content  %}
