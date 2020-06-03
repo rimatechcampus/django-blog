@@ -4,15 +4,15 @@
 {% block content  %}
 
 
-{% for post in  posts%}
+
 <div class="container font-weight-bold p-3 mb-3" style="border: 1px solid #e91e63;;">
     <img class="img-fluid rounded-circle" src="{% static 'images/user.png' %}" alt="" width="100px">
     <span>post in {{post.post_date|date:'d-m-Y'}}</span>
-    <h3><a href="{% url 'post_detail' post.pk %}" class="font-weight-bold text-dark">{{post.title}}</a></h3>
+    <h3><a href="#" class="font-weight-bold text-dark">{{post.title}}</a></h3>
     <p>{{post.content}}</p>
 </div>
 
-{% endfor %}
+
 
 
 

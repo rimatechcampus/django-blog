@@ -2,7 +2,7 @@
 
     {% for post in posts %}
 
-    <a href="#" class="text-dark font-weight-bold">
+    <a href="{% url 'post_detail' post.pk %}" class="text-dark font-weight-bold">
         <li class=" list-group-item">{{post.title}}</li>
     </a>
 
