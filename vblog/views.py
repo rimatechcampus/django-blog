@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post, Comment
+from .forms import NewComment
 # Create your views here.
 # posts = [
 #     {
@@ -40,6 +41,12 @@ def about(request):
 def post_detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     comments = post.comments.filter(active=True)
-    context = {'title': post, 'post': post, 'comments': comments}
+    comment_form = NewComment()
+    context = {
+        'title': post,
+        'post': post,
+        'comments': comments,
+        'comment_form': comment_form
+    }
 
     return render(request, 'post_detail.html', context)
