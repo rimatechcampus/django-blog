@@ -13,14 +13,24 @@
 </div>
 
 <div>
-    <h1 class="border-bottom">Comments</h1>
+    <br>
 
+
+    <h1 class="border-bottom">Comments ({{comments.count}})</h1>
+
+    {% if comments  %}
     {% for comment in comments %}
     <small class="font-weight-bold" style="color:#e91e63;">{{comment.name}} in
         {{comment.comment_date|date:'d-m-Y'}}</small>
     <P>{{comment.message}}</P>
 
     {% endfor %}
+    {% else %}
+    <small class="border-bottom font-weight-bold">no comments({{comments.count}})</small>
+
+    {% endif %}
+
+
 
 </div>
 
