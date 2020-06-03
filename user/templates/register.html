@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content  %}
+
+{% load crispy_forms_tags %}
+
+
+<small class="border-bottom mt-2 font-weight-bold " style="color: #e91e63;">Register</small>
+<div class="border p-4 mt-5 mt-3">
+    <form method="POST" class="mt-3">
+        {% csrf_token %}
+
+        {{form|crispy}}
+
+        <button class="btn btn-secondary">register</button>
+
+    </form>
+    <small class="font-weight-bold">Already have account <a href="#">login</a></small>
+</div>
+
+
+
+
+{% endblock content  %}
