@@ -18,3 +18,20 @@ class Post(models.Model):
 
     class Meta:
         ordering = ('-post_date', )
+
+
+class Comment(models.Model):
+    name = models.CharField(max_length=20)
+    email = models.EmailField()
+    message = models.TextField()
+    comment_date = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=False)
+    post = models.ForeignKey(Post,
+                             related_name='comments',
+                             on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ('-comment_date', )
