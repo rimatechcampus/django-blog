@@ -23,6 +23,7 @@ def register(request):
     return render(request, 'register.html', context)
 
 
+# !******************************************
 # ! login from forms,py file #2
 
 # def login(request):
@@ -45,7 +46,22 @@ def register(request):
 
 # ! logout  #2
 
+# def logout(request):
+#     logout(request)
+#     return render(request, 'logout.html', context={'title': 'logout'})
 
-def logout(request):
-    logout(request)
-    return render(request, 'logout.html', context={'title': 'logout'})
+# !***************************
+#! login  #3
+# def login(request):
+#     if request.method == 'POST':
+#         username = request.POST['username']
+#         password = request.POST['password']
+#         user = authenticate(request, username=username, password=password)
+#         if user is not None:
+#             login(request, user)
+#             return redirect('home')
+#         else:
+#             messages.warning(request,
+#                              f'sorry  {username}  or {password } not exist')
+
+#     return render(request, 'login.html', {'title': 'login'})
