@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login
 from .forms import RegisterForm
 # from .forms import LoginForm
 from django.contrib import messages
+from vblog.models import Post
 # Create your views here.
 
 
@@ -65,3 +66,12 @@ def register(request):
 #                              f'sorry  {username}  or {password } not exist')
 
 #     return render(request, 'login.html', {'title': 'login'})
+
+
+# ! my profile
+def profile(request):
+    posts = Post.objects.filter(author=request.user)
+    return render(request, 'profile.html', {
+        'title': 'profile ',
+        'posts': posts,
+    })

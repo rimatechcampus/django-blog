@@ -13,4 +13,7 @@ urlpatterns = [
     # ! login and logout form
     # path('login/', views.login, name='login'),
     # path('logout/', views.logout, name='logout'),
+
+    #     ! profile
+    path('profile/', views.profile, name='profile'),
 ]

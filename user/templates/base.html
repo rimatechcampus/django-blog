@@ -59,11 +59,14 @@
                                     data-toggle="dropdown">{{ user.username }}</a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
-                                    <a class="dropdown-item" href="#">My account</a>
+                                    <a class="dropdown-item" href="{% url 'profile' %}">My account</a>
                                     <a class="dropdown-item" href="#">Change password</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                                 </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">new post</a>
                             </li>
                         </ul>
                         {% else %}
