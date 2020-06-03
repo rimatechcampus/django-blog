@@ -37,3 +37,14 @@ class RegisterForm(UserCreationForm):
         if User.objects.filter(username=cd['username']).exists():
             raise forms.ValidationError('username already exists ')
         return cd['username']
+
+
+# ! loginform  ---#2
+
+# class LoginForm(forms.ModelForm):
+#     username = forms.CharField(label='username')
+#     password = forms.CharField(label='password', widget=forms.PasswordInput())
+
+#     class Meta:
+#         model = User
+#         fields = ('username', 'password')
