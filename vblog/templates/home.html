@@ -3,6 +3,20 @@
 
 {% block content  %}
 
+<!-- ! error message  -->
+{% if messages  %}
+
+{% for message  in messages  %}
+
+<div class="alert alert-success">
+    {{message}}
+</div>
+
+{% endfor %}
+
+{% endif %}
+
+<!-- ! end message error  -->
 
 {% for post in  posts%}
 <div class="container font-weight-bold p-3 mb-3" style="border: 1px solid #e91e63;;">

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login as auth_login
 from .forms import RegisterForm
+from django.contrib import messages
 # Create your views here.
 
 
@@ -10,7 +11,10 @@ def register(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
-            auth_login(request, user)
+            username = form.cleaned_data['username']
+            messages.success(request,
+                             f'congrats {username} signed up successfully .')
+            return redirect('home')
     else:
         form = RegisterForm()
 
